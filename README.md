@@ -1,6 +1,6 @@
-#Shopping List API
+# Shopping List API
 
-##Summary
+## Summary
 
 An api built for a shopping list interface. It currently supports:
 
@@ -15,10 +15,10 @@ An api built for a shopping list interface. It currently supports:
 - A user can be deleted
 - Users can be added to a list (it's only owner will be its creator)
 
-##Endpoints
+## Endpoints
 
-###Users
-####Create a User
+### Users
+#### Create a User
 `POST /api/v1/users`
 
 Creates a new user with the following attributes:
@@ -36,7 +36,7 @@ Creates a new user with the following attributes:
 }
 ```
 
-####Edit a User
+#### Edit a User
 `PATCH /api/v1/users/:id`
 
 Edits a particular field(s) for a user:
@@ -47,7 +47,7 @@ Edits a particular field(s) for a user:
 }
 ```
 
-####Get a User
+#### Get a User
 `GET /api/v1/users`
 
 Returns the following JSON shape:
@@ -62,7 +62,7 @@ Returns the following JSON shape:
 }
 ```
 
-####Delete a User and all associated records
+#### Delete a User and all associated records
 `DELETE /api/v1/users/:id`
 
 Deletes a user's record and all associated records (lists and items):
@@ -75,8 +75,8 @@ Returns a 201 is successful with the message:
 }
 ```
 
-###Lists
-####Create a List
+### Lists
+#### Create a List
 `POST /api/v1/lists`
 
 Creates a list record. Accepts the following attribtutes:
@@ -99,7 +99,7 @@ Returns a 200 if successful and the following JSON shape:
 }
 ```
 
-####Edit a List
+#### Edit a List
 `PATCH /api/v1/lists/:id`
 
 Edits the list specified by the id. Accepts the following JSON parameter:
@@ -110,7 +110,7 @@ Edits the list specified by the id. Accepts the following JSON parameter:
 }
 ```
 
-####Get a List
+#### Get a List
 `GET /api/v1/lists/:id`
 
 Get the list specified by id:
@@ -126,7 +126,7 @@ Get the list specified by id:
 }
 ```
 
-####Get all lists owned by a user
+#### Get all lists owned by a user
 `GET /api/v1/users/:id/owned-lists`
 
 Returns a JSON array of all of the shopping lists owned by a user:
@@ -150,7 +150,7 @@ Returns a JSON array of all of the shopping lists owned by a user:
 }
 ```
 
-####Get all lists associated with a user
+#### Get all lists associated with a user
 `GET /api/v1/users/:id/all-lists`
 
 Returns a JSON array of all lists associated with a user whether it is owner by them or not:
@@ -174,7 +174,7 @@ Returns a JSON array of all lists associated with a user whether it is owner by 
 }
 ```
 
-####Delete a list
+#### Delete a list
 `DELETE /api/v1/list/:id`
 
 Destroys the list record and user associations, but leaves items in database. Returns a 201 if successful with the following message:
@@ -185,8 +185,8 @@ Destroys the list record and user associations, but leaves items in database. Re
 }
 ```
 
-###Items
-####Create an item
+### Items
+#### Create an item
 `POST /api/v1/users/:id/items`
 
 Creates an item record. Accepts the following JSON payload:
@@ -201,7 +201,7 @@ Creates an item record. Accepts the following JSON payload:
 }
 ```
 
-####Edit an item
+#### Edit an item
 `PATCH /api/v1/users/:id/items/:item_id`
 
 Edits the item specified by `item_id`. Accepts an supported parameter given:
@@ -212,7 +212,7 @@ Edits the item specified by `item_id`. Accepts an supported parameter given:
 }
 ```
 
-####Delete an item
+#### Delete an item
 `DELETE /api/v1/users/:id/item/item_id`
 
 Removes the item with the specified id. Returns a 201 with the following message if successful:
